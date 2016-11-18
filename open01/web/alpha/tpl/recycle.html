@@ -1,0 +1,239 @@
+<link rel="stylesheet" type="text/css" href="css/manage.css" />
+<link rel="stylesheet" href="../css/datatables.min.css" />
+<link rel="stylesheet" href="../css/datatables.bootstrap.css" />
+<link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+<div class="row" style="margin-top:10px;">
+	<div class="col-xs-12">
+				<div class="portlet light portlet-fit portlet-datatable bordered">
+						<div class="portlet-title">
+								<div class="caption">
+										<span class="caption-subject font-dark sbold uppercase">回收站</span>
+								</div>
+						</div>
+						<div class="portlet-body">
+								<div>
+										<div>
+											<!--startprint-->
+											<table class="table table-striped table-bordered table-hover table-checkable order-column dataTable" id="source">
+												<thead>
+													<tr>
+														<th colspan="5">项目</th>
+														<th colspan="7" style="text-align:center">数据</th>
+													</tr>
+													<tr role="row">
+														<th> 删除日期 </th>
+														<th class="table-checkbox sorting_disabled">
+															<!-- <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline" style="right:8px;">
+																<input type="checkbox" class="">
+																<span></span>
+															</label> -->
+														</th>
+														<th class="sorting"> 名称 </th>
+														<th class="sorting"> 描述 </th>
+														<th class="sorting"> 创建日期 </th>
+														<th>删除日期</th>
+														<th class="table-checkbox sorting_disabled">
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline" style="right:8px;">
+																	<input type="checkbox" class="allsell">
+																	<span></span>
+															</label>
+														</th>
+														<th class="sorting"> 名称 </th>
+														<th class="sorting"> 类型 </th>
+														<th class="sorting"> 上传日期 </th>
+														<th class="sorting"> 失效日期 </th>
+														<th class="sorting"> 大小 </th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr data-id="34" data-file="1,2,3" class="tr_mid">
+														<td></td>
+														<td class="table-checkbox sorting_disabled">
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+																	<input type="checkbox" class="sel">
+																	<span></span>
+															</label>
+														</td>
+														<td class="p_buttonx">
+															<input type="text" class="ddd" title="项目1" value="项目1" disabled maxlength="100">
+														</td>
+														<td class="p_buttonx">
+															<input type="text" class="ddd" title="描述1" value="描述1" disabled maxlength="100">
+														</td>
+														<td>2016-11-07</td>
+														<td></td>
+														<td class="table-checkbox sorting_disabled clearfix" style="overflow:hidden;">
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline fen">
+																	<input type="checkbox" class="sell" data-id="1">
+																	<span></span>
+															</label>
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline fen">
+																	<input type="checkbox" class="sell" data-id="2">
+																	<span></span>
+															</label>
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline fen">
+																	<input type="checkbox" class="sell" data-id="3">
+																	<span></span>
+															</label>
+														</td>
+														<td>
+															<div class="fen">数据1</div>
+															<div class="fen">数据2</div>
+															<div class="fen">数据3</div>
+														</td>
+														<td>
+															<div class="fen">文件</div>
+															<div class="fen">文件</div>
+															<div class="fen">流式</div>
+														</td>
+														<td>
+															<div class="fen">2016-11-07</div>
+															<div class="fen">2016-11-07</div>
+															<div class="fen">2016-11-07</div>
+														</td>
+														<td>
+															<div class="fen">2016-11-07</div>
+															<div class="fen">2016-11-07</div>
+															<div class="fen">2016-11-07</div>
+														</td>
+														<td>
+															<div class="fen">0.1</div>
+															<div class="fen">0.2</div>
+															<div class="fen">0.05</div>
+														</td>
+													</tr>
+														<tr data-id="14" data-file="4,5" class="tr_mid">
+															<td></td>
+															<td class="table-checkbox sorting_disabled">
+																<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+																		<input type="checkbox" class="sel">
+																		<span></span>
+																</label>
+															</td>
+															<td class="p_buttonx">
+																<input type="text" class="ddd" title="项目2" value="项目2" disabled maxlength="100">
+															</td>
+															<td class="p_buttonx">
+																<input type="text" class="ddd" title="描述2" value="描述2" disabled maxlength="100">
+															</td>
+															<td>2016-11-07</td>
+															<td></td>
+															<td class="table-checkbox sorting_disabled clearfix" style="overflow:hidden;">
+																<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline fen">
+																		<input type="checkbox" class="sell" data-id="4">
+																		<span></span>
+																</label>
+																<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline fen">
+																		<input type="checkbox" class="sell" data-id="5">
+																		<span></span>
+																</label>
+															</td>
+															<td>
+																<div class="fen">数据4</div>
+																<div class="fen">数据5</div>
+															</td>
+															<td>
+																<div class="fen">文件</div>
+																<div class="fen">流式</div>
+															</td>
+															<td>
+																<div class="fen">2016-11-07</div>
+																<div class="fen">2016-11-07</div>
+															</td>
+															<td>
+																<div class="fen">2016-11-07</div>
+																<div class="fen">2016-11-07</div>
+															</td>
+															<td>
+																<div class="fen">0.1</div>
+																<div class="fen">0.2</div>
+															</td>
+														</tr>
+															<tr data-id="34" data-file="" class="tr_mid">
+																<td></td>
+																<td class="table-checkbox sorting_disabled">
+																	<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+																			<input type="checkbox" class="sel">
+																			<span></span>
+																	</label>
+																</td>
+																<td class="p_buttonx">
+																	<input type="text" class="ddd" title="项目3" value="项目3" disabled maxlength="100">
+																</td>
+																<td class="p_buttonx">
+																	<input type="text" class="ddd" title="描述3" value="描述3" disabled maxlength="100">
+																</td>
+																<td>2016-11-07</td>
+																<td></td>
+																<td>
+
+																</td>
+																<td>
+																</td>
+																<td>
+																</td>
+																<td>
+																</td>
+																<td>
+																</td>
+																<td>
+																</td>
+															</tr>
+																<tr>
+																	<td></td>
+																	<td class="table-checkbox sorting_disabled">
+
+																	</td>
+																	<td>
+																		<select class="selectpicker">
+																			<option>Mustard</option>
+																			<option>Ketchup</option>
+																			<option>Relish</option>
+																		</select>
+																	</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td class="table-checkbox sorting_disabled clearfix" style="overflow:hidden;">
+																		<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+																				<input type="checkbox" class="sell" data-id="6">
+																				<span></span>
+																		</label>
+																	</td>
+																	<td>
+																		<div class="fen">数据6</div>
+																	</td>
+																	<td>
+																		<div class="fen">流式</div>
+																	</td>
+																	<td>
+																		<div class="fen">2016-11-07</div>
+																	</td>
+																	<td>
+																		<div class="fen">2016-11-07</div>
+																	</td>
+																	<td>
+																		<div class="fen">0.2</div>
+																	</td>
+																</tr>
+																<!-- <tr>
+																	<td></td>
+																	<td colspan="4" style="text-align:center;">+ 添加项目</td>
+																	<td colspan="6" style="text-align:center;">+ 添加数据</td>
+																</tr> -->
+												</tbody>
+										</table>
+										<!--endprint-->
+									</div>
+									<div class="row">
+										<div class="col-md-12 col-sm-12" style="text-align:right;">
+											<button type="button" class="btn blue" id="savebtn">保存并处理</button>
+										</div>
+									</div>
+								</div>
+						</div>
+				</div>
+				<!-- END EXAMPLE TABLE PORTLET-->
+		</div>
+</div>

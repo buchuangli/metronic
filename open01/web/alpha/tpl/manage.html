@@ -1,0 +1,356 @@
+<link rel="stylesheet" type="text/css" href="css/manage.css">
+<link rel="stylesheet" href="../css/datatables.min.css" />
+<link rel="stylesheet" href="../css/datatables.bootstrap.css" />
+<link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<div class="page-head row">
+		<div class="col-xs-3">
+			已建项目：<span>0</span>个
+		</div>
+		<div class="col-xs-6 row">
+			<div class="col-xs-4">已上传数据 1.00GB/2.00GB</div>
+
+			<!-- <div class="bg-white bg-font-white"><div class="bg-blue-steel bg-font-blue-steel"></div></div> -->
+			<div class="progress progress-striped col-xs-5" style="padding:0;margin:0;">
+          <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;">
+              <span class="sr-only"> 20% Complete </span>
+          </div>
+      </div>
+			<div class="col-xs-3">剩余1.00GB</div>
+		</div>
+		<div class="col-xs-3" style="text-align:right;">
+			<!-- <button class="btn blue btn-outline">回收站</button> -->
+		</div>
+</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="col-xs-12">
+          <div class="portlet light portlet-fit portlet-datatable bordered">
+              <div class="portlet-title">
+                  <div class="caption">
+                      <span class="caption-subject font-dark sbold uppercase">资源管理</span>
+                  </div>
+                  <div class="actions dt-buttons">
+										<button class="dt-button btn blue btn-outline" id="delete_select">
+											<span>新建项目</span>
+										</button>
+										<button class="dt-button btn blue btn-outline" id="delete_select">
+											<span>删除选中</span>
+										</button>
+										<button class="dt-button btn green btn-outline" id="c_pdf">
+											<span>PDF</span>
+										</button>
+										<button class="dt-button btn purple btn-outline" id="c_csv">
+											<span>CSV</span>
+										</button>
+                  </div>
+              </div>
+              <div class="portlet-body">
+                  <div>
+											<div style="overflow-x:scroll;">
+												<!--startprint-->
+												<table class="table table-responsive table-hover dataTable" id="source">
+	                  			<thead>
+														<tr>
+															<th colspan="7">项目</th>
+															<th colspan="6" style="text-align:center">数据</th>
+														</tr>
+	                      		<tr role="row">
+															<th class="table-checkbox sorting_disabled">
+																<div class="fen">
+																	<input type="checkbox" class="allsel">
+																</div>
+															</th>
+															<th width="30">序号</th>
+															<th>状态</th>
+															<th>名称</th>
+															<th>描述</th>
+															<th>创建日期 </th>
+															<th>操作</th>
+															<th class="table-checkbox sorting_disabled">
+	                                  <input type="checkbox" class="allsell">
+		                          </th>
+															<th>名称</th>
+															<th>类型</th>
+															<th>上传日期</th>
+															<th>失效日期</th>
+															<th>大小</th>
+														</tr>
+                      		</thead>
+													<tbody>
+														<tr data-id="34" data-file="1,2,3" class="tr_mid">
+															<td class="table-checkbox sorting_disabled">
+																<div class="fen">
+	                                  <input type="checkbox" class="sel">
+																	</div>
+															</td>
+															<td>1</td>
+															<td><button type="button" class="btn green">可使用</button></td>
+															<td class="p_buttonx">
+																<input type="text" class="ccc" title="开数科技" value="开数科技" disabled maxlength="100">
+																<textarea spellcheck="false" maxlength="100"></textarea>
+															</td>
+															<td class="p_buttonx">
+																<input type="text" class="ccc" title="北京开数科技有限公司" value="北京开数科技有限公司" disabled maxlength="100">
+																<textarea spellcheck="false" maxlength="100"></textarea>
+															</td>
+															<td>2016-11-07</td>
+															<td>
+																<div class="btn-group">
+                                    <button class="btn green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> 操作
+                                        <i class="fa fa-angle-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li>
+                                            <a href="#analysis">
+                                                <i class="icon-docs"></i>分析报表 </a>
+                                        </li>
+                                        <li>
+                                            <a href="#serch">
+                                                <i class="icon-tag"></i> 智能搜索 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="edit_proN">
+                                                <i class="icon-user"></i> 编辑名称 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="edit_proD">
+                                                <i class="icon-user"></i> 编辑描述 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="delete_pro">
+                                                <i class="icon-user"></i> 删除项目 </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="delete_file">
+                                                <i class="icon-user"></i> 删除数据 </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+															</td>
+															<td class="table-checkbox sorting_disabled clearfix" style="overflow:hidden;">
+																<div class="fen">
+	                                  <input type="checkbox" class="sell" data-id="1">
+																		</div>
+																		<div class="fen">
+	                                  <input type="checkbox" class="sell" data-id="2">
+																	</div>
+																		<div class="fen">
+	                                  <input type="checkbox" class="sell" data-id="3">
+																	</div>
+															</td>
+															<td>
+																<div class="fen" title="流量及转化分析">流量及转化分析</div>
+																<div class="fen" title="受众及行为分析">受众及行为分析</div>
+																<div class="fen" title="财产及安全分析">财产及安全分析</div>
+															</td>
+															<td>
+																<div class="fen">文件</div>
+																<div class="fen">文件</div>
+																<div class="fen">流式</div>
+															</td>
+															<td>
+																<div class="fen">2016-11-07</div>
+																<div class="fen">2016-11-07</div>
+																<div class="fen">2016-11-07</div>
+															</td>
+															<td>
+																<div class="fen">2016-11-07</div>
+																<div class="fen">2016-11-07</div>
+																<div class="fen">2016-11-07</div>
+															</td>
+															<td>
+																<div class="fen">0.10</div>
+																<div class="fen">0.20</div>
+																<div class="fen">0.05</div>
+															</td>
+														</tr>
+															<tr data-id="14" data-file="4,5" class="tr_mid">
+																<td class="table-checkbox sorting_disabled">
+																	<div class="fen">
+		                                  <input type="checkbox" class="sel">
+																		</div>
+																</td>
+																<td>2</td>
+																<td><button type="button" class="btn red">处理中</button></td>
+																<td class="p_buttonx">
+																	<input type="text" class="ccc" title="Hadoop大数据" value="Hadoop大数据" disabled maxlength="100">
+																	<textarea spellcheck="false" maxlength="100"></textarea>
+																</td>
+																<td class="p_buttonx">
+																	<input type="text" class="ccc" title="Hadoop架构的大数据分析思想及架构设计" value="Hadoop架构的大数据分析思想及架构设计" disabled maxlength="100">
+																	<textarea spellcheck="false" maxlength="100"></textarea>
+																</td>
+																<td>2016-11-07</td>
+																<td>
+
+																		<div class="btn-group">
+		                                    <button class="btn green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> 操作
+		                                        <i class="fa fa-angle-down"></i>
+		                                    </button>
+		                                    <ul class="dropdown-menu" role="menu">
+		                                        <li>
+		                                            <a href="#analysis">
+		                                                <i class="icon-docs"></i>分析报表 </a>
+		                                        </li>
+		                                        <li>
+		                                            <a href="#serch">
+		                                                <i class="icon-tag"></i> 智能搜索 </a>
+		                                        </li>
+		                                        <li>
+		                                            <a href="javascript:;" class="edit_pro">
+		                                                <i class="icon-user"></i> 编辑项目 </a>
+		                                        </li>
+		                                        <li>
+		                                            <a href="javascript:;" class="delete_pro">
+		                                                <i class="icon-user"></i> 删除项目 </a>
+		                                        </li>
+		                                        <li>
+		                                            <a href="javascript:;" class="delete_file">
+		                                                <i class="icon-user"></i> 删除数据 </a>
+		                                        </li>
+		                                    </ul>
+		                                </div>
+																</td>
+																<td class="table-checkbox sorting_disabled clearfix" style="overflow:hidden;">
+																	<div class="fen">
+		                                  <input type="checkbox" class="sell" data-id="4">
+																		</div>
+																			<div class="fen">
+		                                  <input type="checkbox" class="sell" data-id="5">
+																		</div>
+																</td>
+																<td>
+																	<div class="fen" title="Hadoop大数据生态环境">Hadoop大数据生态环境</div>
+																	<div class="fen" title="Hadoop多种模式的安装配置">Hadoop多种模式的安装配置</div>
+																</td>
+																<td>
+																	<div class="fen">文件</div>
+																	<div class="fen">流式</div>
+																</td>
+																<td>
+																	<div class="fen">2016-11-07</div>
+																	<div class="fen">2016-11-07</div>
+																</td>
+																<td>
+																	<div class="fen">2016-11-07</div>
+																	<div class="fen">2016-11-07</div>
+																</td>
+																<td>
+																	<div class="fen">0.10</div>
+																	<div class="fen">0.20</div>
+																</td>
+															</tr>
+																<tr data-id="34" data-file="" class="tr_mid">
+																	<td class="table-checkbox sorting_disabled">
+																		<div class="fen">
+		                                  <input type="checkbox" class="sel">
+																		</div>
+																	</td>
+																	<td>3</td>
+																	<td><button type="button" class="btn yellow">未启用</button></td>
+																	<td class="p_buttonx">
+																		<input type="text" class="ccc" title="科学项目" value="科学项目" disabled maxlength="100">
+																		<textarea spellcheck="false" maxlength="100"></textarea>
+																	</td>
+																	<td class="p_buttonx">
+																		<input type="text" class="ccc" title="生命科学、信息科学、经济" value="生命科学、信息科学、经济学" disabled maxlength="100">
+																		<textarea spellcheck="false" maxlength="100"></textarea>
+																	</td>
+																	<td>2016-11-07</td>
+																	<td>
+
+																			<div class="btn-group">
+			                                    <button class="btn green dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false"> 操作
+			                                        <i class="fa fa-angle-down"></i>
+			                                    </button>
+			                                    <ul class="dropdown-menu" role="menu">
+			                                        <li>
+			                                            <a href="#analysis">
+			                                                <i class="icon-docs"></i>分析报表 </a>
+			                                        </li>
+			                                        <li>
+			                                            <a href="#serch">
+			                                                <i class="icon-tag"></i> 智能搜索 </a>
+			                                        </li>
+			                                        <li>
+			                                            <a href="javascript:;" class="edit_pro">
+			                                                <i class="icon-user"></i> 编辑项目 </a>
+			                                        </li>
+			                                        <li>
+			                                            <a href="javascript:;" class="delete_pro">
+			                                                <i class="icon-user"></i> 删除项目 </a>
+			                                        </li>
+			                                        <li>
+			                                            <a href="javascript:;" class="delete_file">
+			                                                <i class="icon-user"></i> 删除数据 </a>
+			                                        </li>
+			                                    </ul>
+			                                </div>
+																	</td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																	<td></td>
+																</tr>
+																	<tr>
+																		<td class="table-checkbox sorting_disabled">
+
+																		</td>
+																		<td>4</td>
+																		<td><button type="button" class="btn yellow">未启用</button></td>
+																		<td>
+																			<select class="selectpicker">
+																			  <option>Mustard</option>
+																			  <option>Ketchup</option>
+																			  <option>Relish</option>
+																			</select>
+																		</td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td class="table-checkbox sorting_disabled clearfix" style="overflow:hidden;">
+																			<div class="fen">
+			                                  <input type="checkbox" class="sell" data-id="6" name="nopro">
+																			</div>
+																		</td>
+																		<td>
+																			<div class="fen" title="科技是第一生产力">科技是第一生产力</div>
+																		</td>
+																		<td>
+																			<div class="fen">流式</div>
+																		</td>
+																		<td>
+																			<div class="fen">2016-11-07</div>
+																		</td>
+																		<td>
+																			<div class="fen">2016-11-07</div>
+																		</td>
+																		<td>
+																			<div class="fen">0.20</div>
+																		</td>
+																	</tr>
+																	<!-- <tr>
+																		<td></td>
+																		<td colspan="4" style="text-align:center;">+ 添加项目</td>
+																		<td colspan="6" style="text-align:center;">+ 添加数据</td>
+																	</tr> -->
+													</tbody>
+		                  </table>
+											<!--endprint-->
+										</div>
+										<div class="row">
+											<div class="col-md-12 col-sm-12" style="text-align:right;">
+												<button type="button" class="btn blue" id="savebtn">保存并处理</button>
+											</div>
+										</div>
+									</div>
+              </div>
+          </div>
+          <!-- END EXAMPLE TABLE PORTLET-->
+      </div>
+	</div>

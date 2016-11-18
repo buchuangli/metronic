@@ -1,0 +1,32 @@
+<Context>
+ <Resource name="jdbc/open01"
+            auth="Container"
+            type="javax.sql.DataSource"
+            factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+            testWhileIdle="true"
+            testOnBorrow="true"
+            testOnReturn="false"
+            validationQuery="/* ping */"
+            validationInterval="30000"
+            timeBetweenEvictionRunsMillis="30000"
+            maxActive="100"
+            minIdle="10"
+            maxWait="10000"
+            initialSize="10"
+            removeAbandonedTimeout="60"
+            removeAbandoned="true"
+            logAbandoned="true"
+            minEvictableIdleTimeMillis="30000"
+            jmxEnabled="true"
+            jdbcInterceptors="org.apache.tomcat.jdbc.pool.interceptor.ConnectionState;
+			      org.apache.tomcat.jdbc.pool.interceptor.StatementFinalizer"
+            username="root"
+            password="mysql"
+            driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://101.200.218.23:3306/demo"/>
+             <!--  url="jdbc:mysql://60.205.152.57:3306/open02"/> -->
+          <!--   url="jdbc:mysql://192.168.1.110:3306/open01"/> -->
+                  
+
+  <Resource name="mail/Session" type="javax.mail.Session" auth="Container"/>
+</Context>

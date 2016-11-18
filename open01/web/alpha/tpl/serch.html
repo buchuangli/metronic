@@ -1,0 +1,123 @@
+<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css"/>
+<link rel="stylesheet" type="text/css" href="css/serch.css" />
+<script>
+	// laydate.reset();
+	var start = {
+		elem: '#start',
+		event:'click',
+		format: 'YYYY-MM-DD hh:mm:ss',
+		max: laydate.now(), //最大日期
+		istime: true,
+		istoday: false,
+		choose: function(datas) {
+			end.min = datas; //开始日选好后，重置结束日的最小日期
+			end.start = datas //将结束日的初始值设定为开始日
+		}
+	};
+	var end = {
+		elem: '#end',
+		event:'click',
+		format: 'YYYY-MM-DD hh:mm:ss',
+		max: laydate.now(),
+		istime: true,
+		istoday: false,
+		choose: function(datas) {
+			start.max = datas; //结束日选好后，充值开始日的最大日期
+		}
+	};
+</script>
+		<div class="contentDiv">
+			<div class="mid_znss mid_znssx clearfix" id="serchNav">
+					<div class="mid_znssH11 clearfix">
+						<div class="mid_znssHL">
+							<select class="pro_choose">
+								<option value="项目1" data-fileid="1" data-id="1">项目1</option>
+								<option value="项目2" data-fileid="2" data-id="2">项目2</option>
+								<option value="项目3" data-fileid="3" data-id="3">项目3</option>
+								<option value="项目4" data-fileid="4" data-id="4">项目4</option>
+								<option value="项目5" data-fileid="5" data-id="5">项目5</option>
+								<option value="项目6" data-fileid="4,2,3" data-id="6">cccc</option>
+							</select>
+						</div>
+						<div class="mid_znssH clearfix">
+							<div class="mid_znssHP1 clearfix">
+								<input class="searchinfo" id="txt" type="text" placeholder="输入搜索词" />
+								<span></span>
+								<ul id="append" class="list"></ul>
+							</div>
+							<input type="button" value="搜 索" class="serchC J_btn">
+							<input type="button" value="在结果中搜索" class="serchE J_btn">
+						</div>
+						<div class="mid_znssH1 clearfix">
+							<div class="mid_znssH1Span2">热搜词:</div>
+							<div class="mid_znssH1Span3 clearfix">
+								<span class="keyword" title="北京北京北京北京北京北京北京北京北京北京">北京北京北京北京北京北京北京北京北京北京</span>
+								<span class="keyword" title="北京">北京</span>
+								<span class="keyword" title="北京">北京</span>
+								<span class="keyword" title="北京">北京</span>
+								<span class="keyword" title="北京">北京</span>
+								<span class="keyword" title="北京">北京</span>
+							</div>
+						</div>
+					</div>
+					<div class="mid_znssH2 clearfix">
+						<div class="mid_znssH1Span clearfix">
+							<span datatime="d" datacont="-1" class="J_btn gl_span">1天</span>
+							<span datatime="d" datacont="-7" class="J_btn">1周</span>
+							<span datatime="m" datacont="-1" class="J_btn">1月</span>
+							<span datatime="m" datacont="-3" class="J_btn">3月</span>
+							<span datatime="m" datacont="-6" class="J_btn">6月</span>
+							<span datatime="y" datacont="-1" class="J_btn">1年</span>
+							<span datatime="y" datacont="-2" class="J_btn">2年</span>
+						</div>
+						<div class="znssH2_firstp">
+							<span>自定义时间&nbsp;</span>
+							<span id="start" class="laydate-icon" onclick="laydate(start)"><i></i></span>
+							<span>--</span>
+							<span id="end" class="laydate-icon" onclick="laydate(end)"><i></i></span>
+						</div>
+						<div class="znssH3 clearfix">
+							<!-- <button class="J_btn">保存表格<i></i></button> -->
+							<!-- <button class="J_btn">添加到首页<i></i></button> -->
+							<!-- <button class="J_btn"><span>切换图表样式</span><i></i></button> -->
+						</div>
+					</div>
+
+			</div>
+
+			<div class="end_znss2 mid_znssx clearfix">
+				<div class="end_znss2Div">
+					<ul class="znss2-right">
+						<li class="znss2-rightH clearfix">
+						</li>
+						<li class="znss2-rightM">
+
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabinfo">
+				<div class="qhtrue">搜索 <em></em> 的结果<b></b><span></span><i>×</i></div>
+			</div>
+			<div class="tableinfo">
+		<form method="post" enctype="multipart/form-data" name="export_excel" id="export_excel" action="DownLoadExcel"></form>
+				<div class="tablex" data-cont="">
+					<button class="J_btn tableSave" title="CSV文件最多只能支持导出65535行数据！">保存表格<i></i></button>
+					<table class="tableSort" border="0">
+						<thead>
+							<tr>
+								<th class="tableorder" width="40">序号</th>
+								<th class="tabletime" width="140">时间戳</th>
+								<th class="datainfo">日志</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="end_znss1">
+					<ul class="znss1_numx">
+						<li class="chart1" style="width:60%;height:330px;"></li>
+						<li class="chart2" style="width:40%;height:330px;"></li>
+					</ul>
+				</div>
+			</div>
+		</div>

@@ -1,0 +1,225 @@
+<!--
+Open01, a company of data openers
+
+Generation of the war for the Tomcat server [ alpha | demo | project ]
+    ant [-Dversion=[demo|product|alpha]]
+    
+    * Default value of version is alpha
+
+Examples:
+    Generate war for current official main site:
+        ant -Dversion=main
+-->
+<project name="open01" default="package" basedir=".">
+
+	<!-- global params -->
+	<property name="app.name" value="Open01" />
+	<property name="version" value="alpha" />
+	<!-- default version -->
+	<property name="src" location="${basedir}/src" />
+	<property name="doc" location="${basedir}/doc" />
+	<property name="web" location="${basedir}/web" />
+	
+	<!--
+	<property name="web-common" location="${web}/common" />
+	<property name="web-versionized" location="${web}/${version}" />
+	<property name="lib" location="${web-versionized}/WEB-INF/lib" />
+	-->
+	<property name="alpha" location="${web}/alpha" />
+	<property name="lib" location="${alpha}/WEB-INF/lib" />
+	
+	
+	
+	
+	<property name="build" value="${basedir}/build" />
+	<property name="dist" location="${basedir}/dist" />
+	<!-- <property name="war-file" value="${app.name}-${version}.war" />-->
+	<property name="war-file" value="open01.war" />
+	<property name="catalina_home" value="/home/ceshi/apache-tomcat-9.0.0.M9/" />
+	<!-- compilation params -->
+	<property name="debug" value="on" />
+	<property name="includeantruntime" value="off" />
+	<property name="optimize" value="off" />
+	<property name="compilerarg" value="" />
+	<property name="target" value="1.8" />
+
+	<!-- Classpath -->
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${catalina_home}/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Initiates timestamps -->
+	<tstamp>
+		<format property="DSTAMP" pattern="yyyy-MM-dd" />
+		<format property="TSTAMP" pattern="hh:mm:ssZ" timezone="GMT" />
+		<format property="YSTAMP" pattern="yyyy" />
+	</tstamp>
+
+	<!-- Initiation -->
+	<target name="init" description="">
+		<echo message="${DSTAMP}T${TSTAMP}" />
+	</target>
+
+	<!-- Cleans previous compiled files -->
+	<target name="clean" depends="init" description="">
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+		<delete dir="${doc}" />
+	</target>
+
+	<!-- Creates the required directories -->
+	<target name="prepare" depends="clean" description="">
+		<mkdir dir="${build}" />
+		<mkdir dir="${build}/css" />
+		<mkdir dir="${build}/font" />
+		<mkdir dir="${build}/img" />
+		<mkdir dir="${build}/lib" />
+		<mkdir dir="${build}/mod" />
+		<mkdir dir="${build}/tpl" />
+		<mkdir dir="${build}/WEB-INF" />
+		<mkdir dir="${build}/WEB-INF/classes" />
+		<mkdir dir="${build}/WEB-INF/lib" />
+		<mkdir dir="${build}/META-INF" />
+		<mkdir dir="${dist}" />
+	</target>
+
+	<!-- Copies files of public phases needed for generating the war -->
+	<target name="copy.common.files" depends="prepare" description="">
+		<copy todir="${build}">
+			<fileset dir="${alpha}">
+				<!-- Public pages  -->
+				<include name="**/*.html" />
+				<include name="**/*.jsp" />
+			</fileset>
+		</copy>
+		<copy todir="${build}" overwrite="true">
+			<fileset dir="${alpha}">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<!-- files in WEB-INF -->
+		<copy todir="${build}/WEB-INF">
+			<fileset dir="${alpha}/WEB-INF">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+		<!--<copy todir="${build}/WEB-INF" overwrite="true">
+			<fileset dir="${web-versionized}/WEB-INF">
+				<include name="**/*.xml" />
+				<include name="**/*.properties" />
+			</fileset>
+		</copy> -->
+		<!-- files in META-INF -->
+		<!--	<copy todir="${build}/META-INF">
+			<fileset dir="${web-versionized}/META-INF" excludes="**/*.*~">
+				<include name="**/context.xml" />
+			</fileset>
+		</copy>-->
+		<!-- dependencies -->
+		<copy todir="${build}/WEB-INF/lib">
+			<fileset dir="${lib}">
+				<include name="*.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Copies needed files to build directory -->
+	<target name="copy" depends="copy.common.files" description="">
+		<!-- jsp and html -->
+		<copy todir="${build}">
+			<fileset dir="${alpha}">
+				<include name="**/signin.jsp" />
+				<!-- security protected pages  -->
+				<include name="**/welcome.jsp" />
+				<include name="**/admin-users.jsp" />
+				<include name="**/admin-user.jsp" />
+				<include name="**/admin-persons.jsp" />
+				<include name="**/admin-person.jsp" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Compiles Java classes -->
+	<target name="compile" depends="copy.common.files,copy" description="">
+		<javac srcdir="src" destdir="${build}/WEB-INF/classes" debug="${debug}" target="${target}" includeantruntime="${includeantruntime}" optimize="${optimize}">
+			<include name="**/*.java" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<!-- Tests if the context file is present for building a war-->
+	<target name="check_context" description="">
+		<available file="${alpha}/META-INF/context.xml" property="context.present" />
+		<!-- otherwise the property is not set -->
+	</target>
+	<target name="context_present" depends="check_context" if="context.present" description="">
+		<echo level="info">Context file found.</echo>
+	</target>
+	<target name="context_absent" depends="check_context" unless="context.present" description="">
+		<echo level="error">Context file not found: cannot build the war!</echo>
+	</target>
+
+	<!-- Performs all the tests for absent files -->
+	<target name="check_all" depends="context_present, context_absent" description="">
+		<condition property="all_files.present">
+			<and>
+				<isset property="context.present" />
+			</and>
+		</condition>
+	</target>
+
+	<!-- Generates the war file for deployment -->
+	<target name="package" depends="compile, check_all" if="all_files.present" description="Generates the war file for deployment">
+		<echo>Generates the war file for deployment...</echo>
+		<delete file="${dist}/${war-file}" />
+		<jar jarfile="${dist}/${war-file}">
+			<fileset dir="${build}" />
+			<manifest>
+				<attribute name="Application" value="Open01 Web Application" />
+				<attribute name="Author" value="Chen Li" />
+				<attribute name="Affiliation" value="Open01 Inc" />
+				<attribute name="Date" value="${DSTAMP}T${TSTAMP}" />
+				<attribute name="Copyright" value="(C) 2016-${YSTAMP} Chen Li" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- Performs the tests -->
+	<target name="test" description="Performs the tests">
+		<echo>Performs the tests...</echo>
+		<javac srcdir="." destdir=".">
+			<include name="Test.java" />
+			<classpath refid="classpath" />
+		</javac>
+		<java classname="Test">
+			<classpath>
+				<fileset dir="${lib}">
+					<include name="*.jar" />
+				</fileset>
+				<pathelement location="." />
+			</classpath>
+		</java>
+	</target>
+
+	<!-- Generates the documentation -->
+	<target name="doc" description="Generates the documentation">
+		<echo>Generates the documentation...</echo>
+		<javadoc destdir="${doc}" author="true" version="true" use="true" windowtitle="Open01 Web Application">
+			<classpath refid="classpath" />
+			<packageset dir="src" defaultexcludes="yes" />
+			<doctitle>
+				<![CDATA[<h1>Open01</h1>]]>
+            </doctitle>
+		<bottom>
+			<![CDATA[Copyright &#169; 2007-${YSTAMP} Chen Li<br />
+			<i>Last modified:&nbsp;${DSTAMP}T${TSTAMP}</i>]]>
+            </bottom>
+	</javadoc>
+</target>
+</project>

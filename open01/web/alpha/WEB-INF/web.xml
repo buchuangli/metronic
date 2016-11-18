@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+ <display-name>Open01</display-name>
+ <description>Open01 Inc., an unordinary company</description>
+
+ <context-param>
+  <param-name>version</param-name>
+  <param-value>alpha</param-value>
+ </context-param>
+
+ <context-param>
+  <param-name>informing_mailing_list</param-name>
+  <param-value>info@open01.com</param-value>
+ </context-param>
+
+ <servlet>
+  <servlet-name>index.jsp</servlet-name>
+  <jsp-file>/index.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>index.jsp</servlet-name>
+  <url-pattern>/index.open</url-pattern>
+ </servlet-mapping>
+ 
+ <servlet>
+  <servlet-name>project</servlet-name>
+  <jsp-file>/tpl/project.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>project</servlet-name>
+  <url-pattern>/project.open</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+  <servlet-name>userPage</servlet-name>
+  <jsp-file>/userPage.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>userPage</servlet-name>
+  <url-pattern>/userPage.open</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+  <servlet-name>analysis</servlet-name>
+  <jsp-file>/tpl/analysis.jsp</jsp-file>
+ </servlet>
+ <servlet-mapping>
+  <servlet-name>analysis</servlet-name>
+  <url-pattern>/analysis.open</url-pattern>
+ </servlet-mapping>
+
+<servlet>
+	<servlet-name>options</servlet-name>
+	<jsp-file>/tpl/options.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>options</servlet-name>
+	<url-pattern>/options.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>recycle</servlet-name>
+	<jsp-file>/tpl/recycle.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>recycle</servlet-name>
+	<url-pattern>/recycle.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>dosage</servlet-name>
+	<jsp-file>/tpl/dosage.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>dosage</servlet-name>
+	<url-pattern>/dosage.open</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>browser</servlet-name>
+	<jsp-file>/tpl/browser.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>browser</servlet-name>
+	<url-pattern>/browser.open</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>ipcount</servlet-name>
+	<jsp-file>/tpl/ipcount.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ipcount</servlet-name>
+	<url-pattern>/ipcount.open</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>datacount</servlet-name>
+	<jsp-file>/tpl/datacount.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>datacount</servlet-name>
+	<url-pattern>/datacount.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>status</servlet-name>
+	<jsp-file>/tpl/status.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>status</servlet-name>
+	<url-pattern>/status.open</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>os</servlet-name>
+	<jsp-file>/tpl/os.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>os</servlet-name>
+	<url-pattern>/os.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>requestType</servlet-name>
+	<jsp-file>/tpl/requestType.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>requestType</servlet-name>
+	<url-pattern>/requestType.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>referrer</servlet-name>
+	<jsp-file>/tpl/referrer.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>referrer</servlet-name>
+	<url-pattern>/referrer.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>serch</servlet-name>
+	<jsp-file>/tpl/serch.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>serch</servlet-name>
+	<url-pattern>/serch.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>conversion</servlet-name>
+	<jsp-file>/tpl/conversion.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>conversion</servlet-name>
+	<url-pattern>/conversion.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>upload</servlet-name>
+	<jsp-file>/tpl/upload.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>upload</servlet-name>
+	<url-pattern>/upload.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>staytime</servlet-name>
+	<jsp-file>/tpl/staytime.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>staytime</servlet-name>
+	<url-pattern>/staytime.open</url-pattern>
+</servlet-mapping> 
+<servlet>
+	<servlet-name>toppage</servlet-name>
+	<jsp-file>/tpl/toppage.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>toppage</servlet-name>
+	<url-pattern>/toppage.open</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>user</servlet-name>
+	<jsp-file>/tpl/user.jsp</jsp-file>
+</servlet>
+<servlet-mapping>
+	<servlet-name>user</servlet-name>
+	<url-pattern>/user.open</url-pattern>
+</servlet-mapping> 
+<!-- 
+ <filter>
+  <filter-name>signin_filter</filter-name>
+  <filter-class>com.open01.SignInFilter</filter-class>
+ </filter>
+ <filter-mapping>
+  <filter-name>signin_filter</filter-name>
+  <url-pattern>/welcome.do</url-pattern>
+ </filter-mapping>
+
+ <filter>
+  <filter-name>id_filter</filter-name>
+  <filter-class>com.open01.IdFilter</filter-class>
+ </filter>
+ <filter-mapping>
+  <filter-name>id_filter</filter-name>
+  <url-pattern>/*</url-pattern>
+ </filter-mapping> -->
+
+ <session-config>
+  <session-timeout>60</session-timeout> 
+ </session-config>
+
+ <resource-ref>
+  <res-ref-name>mail/Session</res-ref-name>
+  <res-type>javax.mail.Session</res-type>
+  <res-auth>Container</res-auth>
+ </resource-ref>
+
+ <welcome-file-list>
+  <welcome-file>index.html</welcome-file>
+ </welcome-file-list>
+
+ <listener>
+  <listener-class>info.chenli.web.jsp.Listener</listener-class>
+ </listener>
+
+
+	<!-- 用户为空servlet 过滤器 -->
+<filter>
+<filter-name>SessionFilter</filter-name>
+<filter-class>com.open01.logs.auth.SessionFilter</filter-class>
+<init-param>
+      <param-name>LOGON_URI</param-name>
+      <param-value>/index.html</param-value>
+</init-param>
+<init-param>
+      <param-name>HOME_URI</param-name>
+      <param-value>/userPage.html</param-value>
+</init-param>
+</filter>
+<filter-mapping>
+<filter-name>SessionFilter</filter-name>
+<url-pattern>*.jsp</url-pattern>
+</filter-mapping>
+    
+ </web-app>

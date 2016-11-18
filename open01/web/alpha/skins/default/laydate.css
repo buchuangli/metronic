@@ -1,0 +1,65 @@
+﻿/**
+
+ @Name： laydate皮肤：默认
+ @Author：贤心
+ @Site：http://sentsin.com/layui/laydate
+
+**/
+
+.laydate-icon{ background-image:url(rili_icon.png)}
+
+.laydate_body .laydate_box,
+.laydate_body .laydate_ym,
+.laydate_body .laydate_ym .laydate_yms,
+.laydate_body .laydate_table,
+.laydate_body .laydate_table td,
+.laydate_body .laydate_bottom #laydate_hms,
+.laydate_body .laydate_time,
+.laydate_body .laydate_bottom .laydate_btn a{}
+
+.laydate_body .laydate_y .laydate_yms a,
+.laydate_body .laydate_choose,
+.laydate_body .laydate_table thead,
+.laydate_body .laydate_bottom .laydte_hsmtex{}
+
+.laydate_body .laydate_box,
+.laydate_body .laydate_ym .laydate_yms,
+.laydate_body .laydate_time{box-shadow: 0px 2px 6px rgba(136,158,175,0.3);}
+
+.laydate_body .laydate_box{border:1px solid #ddd; background-color:#f7f7f7; color:#737373; width: 267px;height: 358px;}
+/*.laydate_body .laydate_box input{color:#fff;background-color: #333;}*/
+.laydate_body .laydate_box .laydate_void{color:#ccc!important; /*text-decoration:line-through;*/}
+.laydate_body .laydate_box .laydate_void:hover{background-color:transparent!important}
+/*.laydate_body .laydate_box a, .laydate_body .laydate_box a:hover{color:#fff;}*/
+.laydate_body .laydate_box a:hover{color:#666;}
+.laydate_body .laydate_click{background-color:rgba(121, 127, 148, 1)!important;color: #fff;}
+/*.laydate_body .laydate_top{border-top:1px solid #000;}*/
+.laydate_body .laydate_ym .laydate_yms{border:1px solid #f7f7f7; background-color:#f7f7f7;}
+.laydate_body .laydate_y .laydate_yms a{border-bottom:1px solid #ddd;}
+.laydate_body .laydate_y .laydate_yms .laydate_chdown{border-top:1px solid #ddd; border-bottom:none;}
+.laydate_body .laydate_choose{}
+.laydate_body .laydate_chprev{border-left:none;}
+/*.laydate_body .laydate_choose:hover, .laydate_body .laydate_y .laydate_yms a:hover{background-color:#333;}*/
+/*.laydate_body .laydate_chtop .laydate_choose cite{display:block;width: 16px;width: 16px;position: absolute;left: 50%;top:50%;margin:-8px 0 0 -8px;background: url(../../../img/kj_sprite.png);background-position-y: -159px;}*/
+/*.laydate_body .laydate_chdown cite, .laydate_body .laydate_ym label{border-top-color:#fff;}*/
+.laydate_body .laydate_chprev cite{display:block;width: 16px;height: 16px;position: absolute;left: 50%;top:50%;margin:-8px 0 0 -8px;background: url(../../../img/kj_sprite.png) -675px -159px;}
+.laydate_body .laydate_chnext cite{display:block;width: 16px;height: 16px;position: absolute;left: 50%;top:50%;margin:-8px 0 0 -8px;background: url(../../../img/kj_sprite.png) -711px -159px;}
+.laydate_body .laydate_table td{border:none;  height:33px!important; line-height:33px!important;}
+.laydate_body .laydate_table .laydate_nothis{color:#999;}
+.laydate_body .laydate_table thead{height:33px!important; line-height:33px!important;}
+.laydate_body .laydate_table thead th{width: 33px;margin-right: 6px;}
+.laydate_body .laydate_table thead th:last-of-type{width: 33px;margin-right: 0;}
+/*.laydate_body .laydate_bottom{border-bottom:1px solid #000;}*/
+.laydate_body .laydate_bottom #laydate_hms{width: 98px;height: 24px;border: 1px solid #ddd;box-sizing: border-box;margin-left: 10px;color: #737373;}
+.laydate_body .laydate_time{background-color:#f7f7f7;}
+.laydate_body .laydate_bottom .laydate_sj{border-right:1px solid #ddd;color: #737373;}
+.laydate_body .laydate_bottom input{background-color:#f7f7f7;}
+.laydate_body .laydate_bottom .laydte_hsmtex{border-bottom:1px solid #ddd;color: #737373;}
+.laydate_body .laydate_bottom .laydate_btn{}
+.laydate_body .laydate_bottom .laydate_v{color:#999}
+/*.laydate_body .laydate_bottom .laydate_btn a{border-right:none;}*/
+
+.laydate_body .laydate_m .laydate_yms span:hover,
+.laydate_body .laydate_y .laydate_yms ul li:hover,
+.laydate_body .laydate_table td:hover,
+.laydate_body .laydate_time .laydate_hmsno span:hover{background-color:rgba(121, 127, 148, 0.2)!important;color: #737373;}

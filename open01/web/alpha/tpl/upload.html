@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="../css/datatables.min.css" />
+<link rel="stylesheet" href="../css/datatables.bootstrap.css" />
+<link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/bootstrap-sweetalert/sweetalert.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+<link href="../assets/global/plugins/icheck/skins/all.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/upload.css">
+<link href="../assets/global/plugins/dropzone/dropzone.min.css">
+<div class="page-head row">
+		<div class="col-xs-3">
+			已建项目：<span>0</span>个
+		</div>
+		<div class="col-xs-6 row">
+			<div class="col-xs-4">已上传数据 1.00GB/2.00GB</div>
+
+			<!-- <div class="bg-white bg-font-white"><div class="bg-blue-steel bg-font-blue-steel"></div></div> -->
+			<div class="progress progress-striped col-xs-5" style="padding:0;margin:0;">
+          <div class="progress-bar progress-bar-info" role="progressbar" style="width: 50%;">
+              <span class="sr-only"> 20% Complete </span>
+          </div>
+      </div>
+			<div class="col-xs-3">剩余1.00GB</div>
+		</div>
+		<div class="col-xs-3" style="text-align:right;">
+			<!-- <button class="btn blue btn-outline">回收站</button> -->
+		</div>
+</div>
+	<div class="row" style="margin-top:10px;">
+		<div class="portlet light bordered">
+			<div class="portlet-title">
+				<div class="caption">
+					<span class="caption-subject font-dark">上传新数据</span>
+				</div>
+				<div class="actions">
+					<button class="btn btn-default">返回资源管理</button>
+				</div>
+			</div>
+			<div class="portlet-body">
+				<div class="tabbable-custom nav-justified">
+          <ul class="nav nav-tabs nav-justified">
+              <li class="active">
+                  <a href="#tab_1_1_1" data-toggle="tab" aria-expanded="true"> <span class="caption-subject font-dark bold" style="font-size:18px;">上传附件</span> 适用于存量日志的上传 </a>
+              </li>
+              <li class="">
+                  <a href="#tab_1_1_2" data-toggle="tab" aria-expanded="false"> <span class="caption-subject font-dark bold" style="font-size:18px;">流式上传</span> 适用于实时日志的上传  </a>
+              </li>
+          </ul>
+          <div class="tab-content">
+              <div class="tab-pane active" id="tab_1_1_1">
+								<div class="mt-element-step">
+									<div class="row step-thin">
+	                  <div class="col-md-4 bg-grey mt-step-col done active">
+	                      <div class="mt-step-number bg-white font-grey">1</div>
+	                      <div class="mt-step-title stepTitle font-grey-cascade">选择上传文件</div>
+	                  </div>
+	                  <div class="col-md-4 bg-grey mt-step-col">
+	                      <div class="mt-step-number bg-white font-grey">2</div>
+	                      <div class="mt-step-title stepTitle font-grey-cascade">核对解析格式</div>
+	                  </div>
+	              	</div>
+									<div class="dropz"></div>
+								</div>
+								</div>
+								<!-- <div class="col-md-12">
+									<form action="/file-upload" class="dropzone dropzone-file-area dz-clickable" id="my-dropzone" style="width: 500px; margin-top: 50px;">
+                      <h3 class="sbold">Drop files here or click to upload</h3>
+                      <p> This is just a demo dropzone. Selected files are not actually uploaded. </p>
+                  <div class="dz-default dz-message"><span></span></div></form>
+								</div> -->
+              <div class="tab-pane" id="tab_1_1_2">
+
+              </div>
+          </div>
+      </div>
+    </div>
+		</div>
+	</div>

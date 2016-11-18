@@ -1,0 +1,65 @@
+
+.table>tbody>tr>td{
+	vertical-align: middle!important;
+}
+.table>tbody>tr>td:nth-of-type(2),.table>tbody>tr>td:nth-of-type(6){
+	text-align: center;
+}
+.fen{
+	display: block;
+	padding:10px 0;
+	text-align: center;
+}
+.toolbar{
+	display: inline-block;
+}
+.p_buttonx {
+	position: relative;
+	text-align: center;
+	width: 160px;
+}
+.ccc{
+	display: block;
+	overflow: hidden;
+	border: none;
+	outline: none;
+	background: transparent;
+	text-align: left;
+	float: left;
+	max-width: 60px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 24px;
+}
+.ddd{
+	display: block;
+	overflow: hidden;
+	border: none;
+	outline: none;
+	background: transparent;
+	text-align: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 24px;
+}
+textarea{
+	position: absolute;
+	top: 60%;
+	left: 2%;
+	display: none;
+	width: 96%;
+	min-height: 60px;
+	border:1px solid #ddd;
+	background: #fff;
+	color: #737373;
+	font-size: 15px;
+	line-height: 20px;
+	z-index: 100;
+	resize: none;
+}
+.bootstrap-switch{
+	float: right;
+}
+#savebtn{
+	margin-top: 20px;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开数科技-登录</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body>
+	<section>
+		<div class="bg-col">
+			<div class="bgg"></div>
+		</div>
+		<div class="logInBox">
+			<div class="logo"></div>
+			<div class="logInBoxView">
+				<form action="userPage.html" method="post" id="logIn" onsubmit="return saveReport();">
+					<dl>
+						<dt>欢迎登录</dt>
+						<dd><input type="text" name="username" required="required" placeholder="输入用户名/Email/手机号"/></dd>
+						<dd><input type="password" name="password" required="required" placeholder="输入密码"></dd>
+						<dd><span>下次自动登录</span><input type="checkbox" name="savePassword" id="savePassword"/></dd>
+						<dd><input type="submit" name="logIn" value="登录"/></dd>
+						<dd><div id="retrievePassword">忘记密码?</div><div id="forHelp">获取帮助</div></dd>
+					</dl>
+				</form>
+				<form action="#" method="post" id="form2">
+					<dl>
+						<dt>密码找回</dt>
+						<dd><input type="text" name="username" required="required" placeholder="输入用户名/Email/手机号"/></dd>
+						<dd><input type="text" name="InvitationCode" required="required" placeholder="邀请码"/></dd>
+						<dd><input type="email" name="email" required="required" placeholder="Email"/></dd>
+						<dd><input type="tel" name="tel" required="required" placeholder="Phone"/></dd>
+						<dd><input type="button" name="retrievePassword" value="找回密码" id="retrievePasswordBtn"/></dd>
+						<dd><div id="backLogIn">取消</div></dd>
+					</dl>
+				</form>
+			</div>
+		</div>
+		<div class="newPassword">
+			<div class="newPassword_t">
+				<e></e>
+				<p>
+				新密码已发送到注册邮箱
+				<br />
+				请登录邮箱查看
+				</p>
+				<span class="J_btn">确 定</span>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<span><span>&copy;</span> 北京开数科技有限公司 2016</span>
+	</footer>
+	<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".bgg").css("transform","translate(100%)");
+//			setTimeout(function(){
+				$(".logInBox").fadeIn(3000);
+//			},500);
+		})
+		$("#retrievePassword").click(function(){
+			$("#logIn").fadeOut(500);
+			setTimeout(function(){
+				$("#form2").fadeIn(500);
+			},500);
+		})
+		$("#backLogIn").click(function(){
+			$("#form2").fadeOut(500);
+			setTimeout(function(){
+				$("#logIn").fadeIn(500);
+			},500);
+			
+		})
+		function saveReport() { 
+			 $.ajax({
+				async : false,
+				cache : false,
+				type : "post",
+				//dataType : "json", //返回json格式	    
+				url : "/open01/index.open",
+				data : {
+					username : $('#username').val(),
+					password : $('#password').val() 
+				},
+				success : function(data) { //请求成功后处理函数。 
+					if(data == null){
+						alert('该用户名不存在，请注册!');
+						return;
+					} else if(data.statu == 'fail'){
+						alert('密码错误，请重新输入！');
+						return;
+					}else{
+						window.location.href="userPage.jsp"
+					}
+				},
+				error : function() {//请求失败处理函数  
+					alert('请求失败');
+				}
+			}); 
+			return false; // 必须返回false，否则表单会自己再做一次提交操作，并且页面跳转 
+		} 
+		$("#retrievePasswordBtn").click(function(){
+				$('.newPassword').fadeIn(350);
+		})
+		$(".newPassword span").click(function(){
+			$('.newPassword').fadeOut(350);
+		})
+	</script>
+</body>
+</html>
